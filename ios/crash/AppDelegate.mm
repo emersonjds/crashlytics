@@ -51,19 +51,15 @@
     rootView.backgroundColor = [UIColor whiteColor];
   }
 
+  [FIRApp configure];
+
   self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
   UIViewController *rootViewController = [UIViewController new];
   rootViewController.view = rootView;
   self.window.rootViewController = rootViewController;
   [self.window makeKeyAndVisible];
   return YES;
-}
-
-- (BOOL)application:(UIApplication *)application
-    didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-  [FIRApp configure];
-
-  return YES;
+ 
 }
 
 - (NSURL *)sourceURLForBridge:(RCTBridge *)bridge
